@@ -19,7 +19,9 @@ Note: this app is a very early work in progress. It is a node-webkit angularjs a
 
 Install bower (web package manager) and gulp (build system). Note that you do not need to install grunt; the Gruntfile exists strictly as an internal workaround for building the node-webkit app.
 
-```npm install -g bower gulp```
+```
+npm install -g bower gulp
+```
 
 Initialize dependencies.
 
