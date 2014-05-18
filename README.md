@@ -1,4 +1,4 @@
-# ![WebTorrent](https://raw.github.com/feross/webtorrent.app/master/app/frontend/img/wordmark.png)
+# ![WebTorrent](https://raw.github.com/feross/webtorrent.app/master/assets/img/wordmark.png)
 [![build](https://img.shields.io/travis/feross/webtorrent.app.svg)](https://travis-ci.org/feross/webtorrent)
 [![npm](https://img.shields.io/npm/v/webtorrent.app.svg)](https://npmjs.org/package/webtorrent)
 [![gittip](https://img.shields.io/gittip/feross.svg)](https://www.gittip.com/feross/)
@@ -34,7 +34,7 @@ Compile local distribution.
 gulp
 ```
 
-Build release distribution targeting nodewebkit.
+Build release distribution.
 
 ```
 gulp nodewebkit
@@ -47,4 +47,4 @@ This will build executables for Windows, Mac OS, 32-bit Linux, and 64-bit Linux 
 
 MIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org).
 
-![Magic](https://raw.github.com/feross/webtorrent.app/master/app/frontend/img/logo.png)
+![Magic](https://raw.github.com/feross/webtorrent.app/master/assets/img/logo.png)
