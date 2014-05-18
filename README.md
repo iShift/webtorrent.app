@@ -1,4 +1,4 @@
-# ![WebTorrent](https://raw.github.com/feross/webtorrent.app/master/assets/img/wordmark.png)
+# ![WebTorrent](https://raw.github.com/feross/webtorrent.app/master/assets/img/webtorrent-logo.gif)
 [![build](https://img.shields.io/travis/feross/webtorrent.app.svg)](https://travis-ci.org/feross/webtorrent)
 [![npm](https://img.shields.io/npm/v/webtorrent.app.svg)](https://npmjs.org/package/webtorrent)
 [![gittip](https://img.shields.io/gittip/feross.svg)](https://www.gittip.com/feross/)

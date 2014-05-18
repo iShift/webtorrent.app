@@ -1,0 +1,163 @@
+/*! app.less
+ * 
+ * NOTE: the css version of this file is auto-generated, so only edit the original 
+ * less version if you don't want your changes to be overwritten.
+ */
+/* **************************************************************************
+                                   GENERAL
+   ************************************************************************** */
+#html,
+body {
+  background: #454545;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #648DAE;
+}
+a:active {
+  color: #1B5F97;
+}
+.spinning-logo {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+}
+.spinning-logo .axis path,
+.spinning-logo .axis line {
+  fill: none;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+.spinning-logo .y.axis {
+  stroke-width: 1px;
+}
+.spinning-logo .y text {
+  fill: #fff;
+}
+.spinning-logo [class^="pie-"] {
+  fill-opacity: .85;
+  -webkit-transition: fill 0.2s ease-in-out;
+  -moz-transition: fill 0.2s ease-in-out;
+  -ms-transition: fill 0.2s ease-in-out;
+  -o-transition: fill 0.2s ease-in-out;
+  transition: fill 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.spinning-logo .pie-selected {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 4;
+}
+.spinning-logo .pie-1 {
+  fill: #5acf31;
+}
+.spinning-logo .pie-1-hover {
+  fill: #85ff48;
+}
+.spinning-logo .pie-2 {
+  fill: #fd898b;
+}
+.spinning-logo .pie-2-hover {
+  fill: #ffcacd;
+}
+.spinning-logo .pie-3 {
+  fill: #5095a8;
+}
+.spinning-logo .pie-3-hover {
+  fill: #76dcf8;
+}
+.spinning-logo .pie-4 {
+  fill: #57666f;
+}
+.spinning-logo .pie-4-hover {
+  fill: #8097a4;
+}
+.spinning-logo .pie-5 {
+  fill: #ff9449;
+}
+.spinning-logo .pie-5-hover {
+  fill: #ffdb6c;
+}
+.spinning-logo .pie-6 {
+  fill: #46bef3;
+}
+.spinning-logo .pie-6-hover {
+  fill: #67ffff;
+}
+.spinning-logo .pie-7 {
+  fill: #b68358;
+}
+.spinning-logo .pie-7-hover {
+  fill: #ffc182;
+}
+.spinning-logo .pie-8 {
+  fill: #008375;
+}
+.spinning-logo .pie-8-hover {
+  fill: #00c1ad;
+}
+.spinning-logo .pie-9 {
+  fill: #d786be;
+}
+.spinning-logo .pie-9-hover {
+  fill: #ffc6ff;
+}
+.spinning-logo .pie-10 {
+  fill: #e9e9eb;
+}
+.spinning-logo .pie-10-hover {
+  fill: #ffffff;
+}
+#header {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+}
+#header .logo {
+  position: relative;
+  top: -24px;
+  margin-left: .2em;
+  display: inline-block;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 3.5em;
+}
+#header .logo .prefix {
+  color: rgba(13, 215, 247, 0.7);
+}
+#header .logo .suffix {
+  color: rgba(237, 237, 237, 0.95);
+}
+.table-torrents tfoot {
+  display: none;
+}
+.black {
+  color: #000 !important;
+  text-align: center !important;
+}
+.percent-done {
+  margin-left: .5em;
+}
+.float-right {
+  float: right;
+}
+.inline {
+  display: inline;
+}
+#content {
+  margin: 0 auto;
+}
+.title,
+.video-js {
+  text-align: center;
+  margin: 0 auto;
+}
+.title {
+  color: #fff;
+  margin-bottom: 1em;
+}
