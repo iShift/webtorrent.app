@@ -1,0 +1,121 @@
+/*! app.less
+ * 
+ * NOTE: the css version of this file is auto-generated, so only edit the original 
+ * less version if you don't want your changes to be overwritten.
+ */
+
+
+/* **************************************************************************
+                                   GENERAL
+   ************************************************************************** */
+
+
+#html, body {
+  background: #454545;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #648DAE;
+
+  &:active {
+    color: #1B5F97;
+  }
+}
+
+.spinning-logo {
+  display: inline-block;
+  width:  96px;
+  height: 96px;
+  border-radius: 50%;
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+  }
+
+  .y.axis {
+    stroke-width: 1px;
+  }
+  .y text {
+    fill: #fff;
+  }
+
+  [class^="pie-"]{
+    fill-opacity:.85;
+    -webkit-transition: fill 0.2s  ease-in-out;
+    -moz-transition: fill 0.2s  ease-in-out;
+    -ms-transition: fill 0.2s  ease-in-out;
+    -o-transition: fill 0.2s ease-in-out;
+    transition: fill 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+  .pie-selected {
+    stroke: rgba(255,255,255,.6);
+    stroke-width: 4
+  }
+
+  .pie-1 {fill: #5ACF31} .pie-1-hover{fill:#85ff48}
+  .pie-2 {fill: #FD898B} .pie-2-hover{fill:#ffcacd}
+  .pie-3 {fill: #5095A8} .pie-3-hover{fill:#76dcf8}
+  .pie-4 {fill: #57666F} .pie-4-hover{fill:#8097a4}
+  .pie-5 {fill: #FF9449} .pie-5-hover{fill:#ffdb6c}
+  .pie-6 {fill: #46BEF3} .pie-6-hover{fill:#67ffff}
+  .pie-7 {fill: #B68358} .pie-7-hover{fill:#ffc182}
+  .pie-8 {fill: #008375} .pie-8-hover{fill:#00c1ad}
+  .pie-9 {fill: #D786BE} .pie-9-hover{fill:#ffc6ff}
+  .pie-10 {fill: #E9E9EB} .pie-10-hover{fill:#ffffff}
+}
+
+#header {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+  
+  .logo {
+    position: relative;
+    top: -24px;
+    margin-left: .2em;
+    display: inline-block;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font-size: 3.5em;
+    
+    .prefix { color: rgba(13,215,247,.7); }
+    .suffix { color: rgba(237,237,237,.95); }
+  }
+}
+
+.table-torrents {
+  tfoot {
+    display: none;
+  }
+}
+
+.black { color: #000 !important; text-align: center !important; }
+.percent-done { margin-left: .5em; }
+.float-right { float: right; }
+.inline { display: inline; }
+
+#content {
+  margin: 0 auto;
+}
+
+.title, .video-js {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title {
+  color: #fff;
+  margin-bottom: 1em;
+}
+

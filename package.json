@@ -1,0 +1,67 @@
+{
+  "name": "webtorrent",
+  "description": "Streaming torrent client",
+  "homepage": "http://webtorrent.io",
+  "bugs": "https://github.com/feross/webtorrent/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/webtorrent.app.git"
+  },
+  "license": "MIT",
+  "main": "app://host/index.html",
+  "version": "0.0.1",
+  "window": {
+    "title": "Webtorrent",
+    "icon": "assets/img/icon.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 962,
+    "height": 600,
+    "min_width": 962,
+    "min_height": 600,
+    "resizable": true
+  },
+  "keywords": [
+    "torrent",
+    "bittorrent",
+    "bittorrent client",
+    "streaming",
+    "download",
+    "webrtc",
+    "webrtc data",
+    "webtorrent",
+    "mad science"
+  ],
+  "scripts": {
+    "start": "nodewebkit dist",
+    "compiler": "gulp",
+    "deploy": "gulp nodewebkit"
+  },
+  "dependencies": {
+    "webtorrent": "0.2.9",
+    "rimraf": "^2.2.6",
+    "moment": "^2.6.0",
+    "nodewebkit": "^0.8.6-2",
+    "network-address": "0.0.4",
+    "numeral": "^1.5.3",
+    "inherits": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-less": "*",
+    "gulp-minify-css": "*",
+    "gulp-clean": "~0.2.4",
+    "gulp-rename": "~1.1.0",
+    "gulp-concat": "~2.1.7",
+    "gulp-debug": "~0.2.0",
+    "bower": "~1.2.8",
+    "gulp-jshint": "^1.6.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "gulp-grunt": "^0.4.1",
+    "grunt-node-webkit-builder": "^0.1.21",
+    "gulp-replace": "^0.3.0",
+    "gulp-imagemin": "^0.5.0",
+    "gulp-shell": "^0.2.5"
+  }
+}

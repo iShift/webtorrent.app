@@ -1,0 +1,23 @@
+<div class='panel panel-info'>
+  <div class="panel-heading clearfix">
+    <h3 class="inline">Torrents</h3>
+    <button type="button" ng-click="addTorrent()" class="btn btn-success float-right"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
+  </div>
+
+  <table ng-table='torrentsTable' class='table table-bordered table-striped table-torrents'>
+    <tr ng-repeat='torrent in torrents'>
+      <td data-title="'Name'">
+        <a ng-if="torrent.streamable" ng-href="/torrent/{{torrent.infoHash}}/stream">{{torrent.name}}</a>
+        <span ng-if="!torrent.streamable">{{torrent.name||torrent.infoHash}}</span>
+      </td>
+      <td data-title="'Status'">
+        <progressbar style="min-width: 120px" ng-if="torrent.name" ng-class="{ 'progress-striped': true, 'active': (torrent.percentDone > 0 && torrent.percentDone < 100) }" value="torrent.percentDone"><span ng-class="{ 'percent-done': true, black: (torrent.percentDone < 30) }">{{+torrent.percentDone.toFixed(2)}}%</span></progressbar>
+        <span ng-if="!torrent.name">Downloading metadata...</span>
+      </td>
+      <td data-title="'ETA'">{{torrent.eta}}</td>
+      <td data-title="'Size'">{{torrent.length}}</td>
+      <td data-title="'Peers'">{{torrent.numPeers}}</td>
+      <td data-title="'Download Speed'">{{torrent.downloadSpeed}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h3 class="modal-title">Add Torrent</h3>
+</div>
+
+<div class="modal-body">
+  <form role="form" class="form-horizontal">
+    <div class="form-group">
+      <label for="torrentId">Torrent Id</label>
+      <input type="text" class="form-control" id="torrentId" placeholder="Magnet URI, infohash, or .torrent file URL" ng-model="torrent.id">
+      <p class="help-block">Ex. JH2TF3UY4IIOMTJ7SCNAZIBZ3IFSX45H</p>
+    </div>
+
+    <!-- TODO: support torrent file upload
+    <p class="help-block">OR</p>
+
+    <div class="form-group">
+      <label for="torrentFile">Torrent File</label>
+      <input type="file" id="torrentFile">
+    </div>-->
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="ok()">OK</button>
+  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

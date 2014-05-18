@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" ng-app="webtorrent">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>WebTorrent</title>
+    
+    <meta name="author"    content="Webtorrent.io">
+    <meta name="copyright" content="Webtorrent.io 2014">
+    
+    <link rel="stylesheet" href="assets/third-party/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/third-party/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/third-party/videojs/dist/video-js/video-js.min.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC'>
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+  
+  <body ng-controller="RootCtrl">
+    <div class='container'>
+      <a id='header' href='/'>
+        <div class='spinning-logo'></div>
+        <div class='logo'><span class='prefix'>Web</span><span class='suffix'>Torrent</span></div>
+      </a>
+      
+      <div id='content'>
+        <!-- angular view content injected here -->
+        <div ng-view></div>
+      </div>
+    </div>
+    
+    <div id="scripts">
+      <!-- basic third-party dependencies -->
+      <script src="assets/third-party/jquery/dist/jquery.min.js"></script>
+      <script src="assets/third-party/d3/d3.min.js"></script>
+      <script src="assets/third-party/underscore/underscore.js"></script>
+      <script src="assets/third-party/videojs/dist/video-js/video.js"></script>
+      
+      <!-- angular dependencies -->
+      <script src="assets/third-party/angular/angular.min.js"></script>
+      <script src="assets/third-party/angular-route/angular-route.min.js"></script>
+      <script src="assets/third-party/angular-bootstrap/ui-bootstrap.min.js"></script>
+      <script src="assets/third-party/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+      <script src="assets/third-party/ng-table/ng-table.min.js"></script>
+      
+      <!-- node-webkit initialization -->
+      <script src="assets/js/gui.js"></script>
+
+      <!-- angular app -->
+      <script src="assets/js/app.js"></script>
+      <script src="assets/js/logo.js"></script>
+      
+      <!-- angular services -->
+      <script src="assets/js/services/webtorrent.js"></script>
+      
+      <!-- angular directives -->
+      <script src="assets/js/directives/videojs.js"></script>
+      
+      <!-- angular controllers -->
+      <script src="assets/js/controllers/RootCtrl.js"></script>
+      <script src="assets/js/controllers/HomeCtrl.js"></script>
+      <script src="assets/js/controllers/AddTorrentCtrl.js"></script>
+      <script src="assets/js/controllers/TorrentStreamCtrl.js"></script>
+    </div>
+  </body>
+</html>
