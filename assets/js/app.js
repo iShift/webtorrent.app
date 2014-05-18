@@ -20,8 +20,8 @@ angular.module('webtorrent').config(function ($routeProvider, $locationProvider)
 })
 
 angular.module('webtorrent').config(['$compileProvider', function ($compileProvider) {
-  // NOTE (travis): prevent angular from adding unsafe: to local trigger.io resources
-  // which would otherwise use an unrecognized/nonstandard content: prefix.
+  // NOTE (travis): prevent angular from adding unsafe: to local resources
+  // which would otherwise use an unrecognized/nonstandard file: prefix.
   var regex = /^\s*(https?|ftp|mailto|file|tel|content|blob):|data:image|/
   $compileProvider.imgSrcSanitizationWhitelist(regex)
   $compileProvider.aHrefSanitizationWhitelist(regex)
