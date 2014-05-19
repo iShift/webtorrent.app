@@ -23,7 +23,6 @@ client.server.listen(9000)
 
 app.io.route('addTorrent', function (req) {
   client.add(req.data.torrentId, req.data.opts)
-  app.io.broadcast('test', req.data)
 })
 
 client.on('addTorrent', function (torrent) {

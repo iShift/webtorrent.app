@@ -52,9 +52,6 @@ function Client () {
   setTimeout(tryConnect, 1000)
 
   self.socketP.then(function (socket) {
-    socket.on('test', function (t) {
-      console.log("TEST", t)
-    })
     socket.on('addTorrent', function (torrent) {
       self.emit('addTorrent', torrent)
     })

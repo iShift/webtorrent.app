@@ -7,20 +7,14 @@
 
 Note: this app is a very early work in progress. It is a node-webkit angularjs application built off of [webtorrent](https://github.com/feross/webtorrent).
 
-
-### Todo for basic app
-  * Move webtorrent client into worker thread! Currently, the node-webkit UI starts to freeze up once a torrent ramps up and starts consuming most of the thread's resources.
-  * Test basic app on all platforms: Windows, ~~Mac OS~~, Linux32, Linux64
-  * Remove tmp files on exit
-  * Support streaming: video, audio. Note that video streaming is currently in a broken state after converting from a webapp to a node-webkit app.
-  * Build out interface and add functionality
+Please see the list of [issues](https://github.com/feross/webtorrent.app/issues) tracking for project status. Contributions are very welcome :)
 
 ### Building
 
-Install bower (web package manager) and gulp (build system). Note that you do not need to install grunt; the Gruntfile exists strictly as an internal workaround for building the node-webkit app.
+Install bower (web package manager), gulp (build system), and nodewebkit (only necessary for debug, non-release builds). Note that you do not need to install grunt; the Gruntfile exists strictly as an internal workaround for building the node-webkit app.
 
 ```
-npm install -g bower gulp
+npm install -g bower gulp nodewebkit
 ```
 
 Initialize dependencies.
@@ -36,7 +30,9 @@ Compile local distribution.
 gulp
 ```
 
-Build release distribution.
+You can now run `npm start` which will run `nodewebkit dist` on the local distribution. This is mainly used for debugging during development.
+
+To build release distributions, run
 
 ```
 gulp nodewebkit
