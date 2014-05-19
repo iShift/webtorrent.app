@@ -72,7 +72,7 @@ client.on('addTorrent', function (torrent) {
       var unchoked = swarm.wires.filter(active)
       var runtime = getRuntime()
       var speed = swarm.downloadSpeed()
-      var percentDone = swarm.downloaded / torrent.length
+      var percentDone = Math.max(0, Math.min(100, 100 * swarm.downloaded / torrent.length))
       var estimatedSecondsRemaining = Math.max(0, torrent.length - swarm.downloaded) / (speed > 0 ? speed : -1)
       var estimate = moment.duration(estimatedSecondsRemaining, 'seconds').humanize()
 
@@ -84,7 +84,7 @@ client.on('addTorrent', function (torrent) {
         streamable: true,
         streamUrl: href,
         mime: client.mime,
-        percentDone: 100 * percentDone,
+        percentDone: percentDone,
         downloadSpeed: bytes(speed) + '/s',
         downloadSpeedRaw: speed,
         numUnchoked: unchoked.length,

@@ -28,7 +28,7 @@ function Client () {
 
   function onConnectError (err) {
     if (numConnectionAttempts++ > 5) {
-      deferredSocket.reject(e)
+      deferredSocket.reject(err)
     } else {
       setTimeout(tryConnect, 100 * numConnectionAttempts)
     }

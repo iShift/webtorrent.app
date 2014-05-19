@@ -11,7 +11,9 @@ Please see the list of [issues](https://github.com/feross/webtorrent.app/issues)
 
 ### Structure
 
-Webtorrent.app is a [node-webkit](https://github.com/rogerwang/node-webkit) [angularjs](https://angularjs.org/) application built off of [webtorrent](http://webtorrent.io). An underlying webtorrent client, which manages the actual bittorrent connections and downloading, is spawned as a child process that communicates with the main node-webkit app via websockets courtesy of [express.io](http://express-io.org/) ([express](http://expressjs.com/)+[socket.io](http://socket.io/)). 
+Webtorrent.app is a [node-webkit](https://github.com/rogerwang/node-webkit) [angularjs](https://angularjs.org/) application built off of [webtorrent](http://webtorrent.io). An underlying webtorrent client, which manages the actual bittorrent connections and downloading, is spawned as a child process that communicates with the main node-webkit app via websockets courtesy of [express.io](http://express-io.org/) ([express](http://expressjs.com/)+[socket.io](http://socket.io/)).
+
+The app bootstraps by loading index.html, and it's reasonably easy to follow the logic from there.
 
 ### Building
 
