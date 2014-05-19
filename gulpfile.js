@@ -80,7 +80,7 @@ gulp.task('compile', [
 ])
 
 gulp.task('clean', function () {
-  gulp.src(paths.dest.root, { read: false })
+  gulp.src([ paths.dest.root, paths.build.root ], { read: false })
     .pipe(clean())
 })
 
@@ -138,7 +138,7 @@ gulp.task('fonts', function () {
 
 gulp.task('images', function () {
   gulp.src(paths.src.images)
-    .pipe(imagemin())
+    //.pipe(imagemin())
     .pipe(gulp.dest(paths.dest.imagesRoot))
 })
 

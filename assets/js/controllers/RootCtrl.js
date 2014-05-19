@@ -17,7 +17,7 @@ angular.module('webtorrent').controller('RootCtrl', function (
   $rootScope.torrentMap = {}
   $rootScope.torrents = []
 
-  webtorrent.on('torrent', function (data) {
+  function addTorrent (data) {
     var id = data.infoHash
     if (!(id in $rootScope.torrentMap)) {
       data.numPeers = 0
@@ -26,7 +26,8 @@ angular.module('webtorrent').controller('RootCtrl', function (
         $rootScope.torrents.push(data)
       })
     }
-  })
+  }
+  webtorrent.on('addTorrent', addTorrent)
 
   webtorrent.on('error', function (data) { console.log(data) })
   webtorrent.on('torrent:metadata:update', function (data) {
@@ -39,6 +40,7 @@ angular.module('webtorrent').controller('RootCtrl', function (
 
   webtorrent.on('torrent:update', function (data) {
     var torrent = $rootScope.torrentMap[data.infoHash]
+    if (!torrent) return addTorrent(data)
 
     $rootScope.safeApply(function () {
       $rootScope.torrentMap[data.infoHash] = $rootScope.torrents[$rootScope.torrents.indexOf(torrent)] = _.extend(torrent, data)
