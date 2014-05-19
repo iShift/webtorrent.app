@@ -30,7 +30,7 @@ Compile local distribution.
 gulp
 ```
 
-You can now run `npm start` which will run `nodewebkit dist` on the local distribution. This is mainly used for debugging during development.
+You can now run `npm start` to run the local version of the app (which runs `nodewebkit dist` under the hood). This is mainly used for debugging during development.
 
 To build release distributions, run
 
