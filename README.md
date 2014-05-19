@@ -5,7 +5,7 @@
 
 ### WebTorrent.app - Streaming bittorrent client for OS X, Windows, and Linux
 
-Note: this app is a very early work in progress. It currently only supports adding a single torrent and streaming torrent videos, but it will eventually be a full-fledged streaming bittorrent client ala [Vuze](http://www.vuze.com/) or [uTorrent](http://www.utorrent.com/) with the added benefit of being built off of [webtorrent](http://webtorrent.io), so seeders of the system will be facilitating a future of 100% plugin-free web-based bittorrent over [WebRTC](http://www.webrtc.org/)!
+Note: this app is a very early work in progress. It currently only supports adding a single torrent and streaming torrent videos, but it will eventually be a full-fledged streaming bittorrent client ala [Vuze](http://www.vuze.com/) or [uTorrent](http://www.utorrent.com/) with the added benefit of being built off of [webtorrent](http://webtorrent.io). This means that seeders of the system will be facilitating plugin-free web-based bittorrent over [WebRTC](http://www.webrtc.org/)!
 
 Please see the list of [issues](https://github.com/feross/webtorrent.app/issues) tracking the project's status. Contributions are very welcome, even if it's just trying the app out and reporting bugs :)
 
