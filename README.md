@@ -5,13 +5,17 @@
 
 ### WebTorrent.app - Streaming bittorrent client for OS X, Windows, and Linux
 
-Note: this app is a very early work in progress. It is a node-webkit angularjs application built off of [webtorrent](https://github.com/feross/webtorrent).
+Note: this app is a very early work in progress. It currently only supports adding a single torrent and streaming torrent videos, but it will eventually be a full-fledged streaming bittorrent client ala [Vuze](http://www.vuze.com/) or [uTorrent](http://www.utorrent.com/) with the added benefit of being built off of [webtorrent](http://webtorrent.io), so seeders of the system will be facilitating a future of 100% plugin-free web-based bittorrent over [WebRTC](http://www.webrtc.org/)!
 
-Please see the list of [issues](https://github.com/feross/webtorrent.app/issues) tracking for project status. Contributions are very welcome :)
+Please see the list of [issues](https://github.com/feross/webtorrent.app/issues) tracking the project's status. Contributions are very welcome, even if it's just trying the app out and reporting bugs :)
+
+### Structure
+
+Webtorrent.app is a [node-webkit](https://github.com/rogerwang/node-webkit) [angularjs](https://angularjs.org/) application built off of [webtorrent](http://webtorrent.io). An underlying webtorrent client, which manages the actual bittorrent connections and downloading, is spawned as a child process that communicates with the main node-webkit app via websockets courtesy of [express.io](http://express-io.org/) ([express](http://expressjs.com/)+[socket.io](http://socket.io/)). 
 
 ### Building
 
-Install bower (web package manager), gulp (build system), and nodewebkit (only necessary for debug, non-release builds). Note that you do not need to install grunt; the Gruntfile exists strictly as an internal workaround for building the node-webkit app.
+Install [bower](http://bower.io/) (web package manager), [gulp](http://gulpjs.com/) (build system), and [nodewebkit](https://www.npmjs.org/package/nodewebkit). Note that you do not need to install grunt; the Gruntfile exists strictly as an internal workaround for building the node-webkit app. Also note that you only need to install nodewebkit if you want to run the local development version of webtorrent.app.
 
 ```
 npm install -g bower gulp nodewebkit
