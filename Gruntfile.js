@@ -7,10 +7,12 @@
 
 module.exports = function (grunt) {
   grunt.initConfig({
-    pkg: grunt.file.readJSON('./dist/package.json'),
+    pkg: grunt.file.readJSON('./package.json'),
     nodewebkit: {
       options: {
+        version: '0.9.2',
         build_dir: './build',
+        mac_icns: 'assets/img/icon.icns',
         mac: true,
         win: true,
         linux32: true,

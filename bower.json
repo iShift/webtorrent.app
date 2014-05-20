@@ -44,6 +44,7 @@
     "videojs": "~4.5.2",
     "bootstrap": "~3.1.1",
     "underscore": "~1.6.0",
-    "socket.io-client": "~0.9.16"
+    "socket.io-client": "~0.9.16",
+    "mousetrap": "~1.4.6"
   }
 }

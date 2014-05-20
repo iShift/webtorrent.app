@@ -16,16 +16,16 @@
   </head>
   
   <body ng-controller="RootCtrl">
-    <div class='container'>
-      <a id='header' href='/'>
-        <div class='spinning-logo'></div>
-        <div class='logo'><span class='prefix'>Web</span><span class='suffix'>Torrent</span></div>
-      </a>
-      
-      <div id='content'>
-        <!-- angular view content injected here -->
-        <div ng-view></div>
-      </div>
+    <header id='header'></header>
+    
+    <a class='logo-container' href='/'>
+      <div class='spinning-logo'></div>
+      <div class='logo'><span class='prefix'>Web</span><span class='suffix'>Torrent</span></div>
+    </a>
+    
+    <div id='content'>
+      <!-- angular view content injected here -->
+      <div ng-view></div>
     </div>
     
     <div id="scripts">
@@ -35,6 +35,7 @@
       <script src="assets/third-party/underscore/underscore.js"></script>
       <script src="assets/third-party/videojs/dist/video-js/video.js"></script>
       <script src="assets/third-party/socket.io-client/dist/socket.io.js"></script>
+      <script src="assets/third-party/mousetrap/mousetrap.min.js"></script>
 
       <!-- angular dependencies -->
       <script src="assets/third-party/angular/angular.min.js"></script>

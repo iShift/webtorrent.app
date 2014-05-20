@@ -27,7 +27,7 @@ paths.src.root                   = paths.root + 'assets/'
 paths.src.index                  = paths.root + 'index.html'
 paths.src.scripts                = paths.src.root + 'js/**/*.js'
 paths.src.fonts                  = paths.src.root + 'fonts/*'
-paths.src.images                 = paths.src.root + 'img/*'
+paths.src.images                 = paths.src.root + 'img/**'
 paths.src.stylesRoot             = paths.src.root + 'css/'
 paths.src.styles                 = paths.src.stylesRoot + '**/*.less'
 paths.src.stylesEntryFile        = paths.src.stylesRoot + 'app.less'
@@ -76,7 +76,8 @@ gulp.task('compile', [
   'templates',
   'index',
   'node-dependencies',
-  'bower-dependencies'
+  'bower-dependencies',
+  'nodewebkit-workaround'
 ])
 
 gulp.task('clean', function () {
@@ -109,7 +110,7 @@ gulp.task('lint', function () {
 
 var nodeModuleTasks = [ 'mkdir -p ' + paths.dest.root ]
 paths.src.nodeDependencies.forEach(function (path) {
-  nodeModuleTasks.push('cp -rf ' + path + ' ' + paths.dest.root + '  &> /dev/null||echo')
+  nodeModuleTasks.push('cp -rf ' + path + ' ' + paths.dest.root + ' &> /dev/null || echo')
 })
 gulp.task('node-dependencies', shell.task(nodeModuleTasks))
 
@@ -121,7 +122,7 @@ gulp.task('node-dependencies', shell.task(nodeModuleTasks))
 //    .pipe(gulp.dest(paths.dest.root))
 //})
 
-gulp.task('bower-dependencies', function () {
+gulp.task('bower-dependencies', [ 'nodewebkit-workaround' ], function () {
   gulp.src(paths.src.bowerDependencies)
     .pipe(gulp.dest(paths.dest.bowerDependenciesRoot))
 })
@@ -166,5 +167,12 @@ gulp.task('ffmpeg', [ 'grunt-nodewebkit' ], shell.task([
   'cp -f ' + 'lib/win/ffmpegsumo.dll' + ' "' + paths.build.win + '"',
   'cp -f ' + 'lib/linux32/libffmpegsumo.so' + ' "' + paths.build.linux32 + '"',
   'cp -f ' + 'lib/linux64/libffmpegsumo.so' + ' "' + paths.build.linux64 + '"'
+]))
+
+// temporary nodewebkit hack for nodewebkit
+// http://stackoverflow.com/questions/22787613/running-nodewebkit-app-fails-with-invalid-package-json-field-main-is-required
+// https://github.com/shama/nodewebkit/issues/28
+gulp.task('nodewebkit-workaround', shell.task([
+  'mv -f node_modules/nodewebkit/package.json node_modules/nodewebkit/_package.json &> /dev/null || echo',
 ]))
 

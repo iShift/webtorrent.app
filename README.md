@@ -17,7 +17,7 @@ The app bootstraps by loading index.html, and it's reasonably easy to follow the
 
 ### Building
 
-Install [bower](http://bower.io/) (web package manager), [gulp](http://gulpjs.com/) (build system), and [nodewebkit](https://www.npmjs.org/package/nodewebkit). Note that you do not need to install grunt; the Gruntfile exists strictly as an internal workaround for building the node-webkit app. Also note that you only need to install nodewebkit if you want to run the local development version of webtorrent.app.
+Install [bower](http://bower.io/) (web package manager) and [gulp](http://gulpjs.com/) (build system). Note that you do not need to install grunt; the Gruntfile exists strictly as an internal workaround for building the node-webkit app.
 
 ```
 npm install -g bower gulp nodewebkit
@@ -36,7 +36,7 @@ Compile local distribution.
 gulp
 ```
 
-You can now run `npm start` to run the local version of the app (which runs `nodewebkit dist` under the hood). This is mainly used for debugging during development.
+You can now run `npm start` to run the local version of the app. This is mainly used for debugging during development.
 
 To build release distributions, run
 

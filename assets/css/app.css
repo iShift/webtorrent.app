@@ -44,9 +44,6 @@ a:active {
   -o-transition: fill 0.2s ease-in-out;
   transition: fill 0.2s ease-in-out;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -114,12 +111,12 @@ a:active {
 .spinning-logo .pie-10-hover {
   fill: #ffffff;
 }
-#header {
+.logo-container {
   display: block;
-  text-align: center;
   margin: 1em auto;
+  text-align: center;
 }
-#header .logo {
+.logo-container .logo {
   position: relative;
   top: -24px;
   margin-left: .2em;
@@ -127,11 +124,14 @@ a:active {
   font-family: 'Carrois Gothic SC', sans-serif;
   font-size: 3.5em;
 }
-#header .logo .prefix {
+.logo-container .logo .prefix {
   color: rgba(13, 215, 247, 0.7);
 }
-#header .logo .suffix {
+.logo-container .logo .suffix {
   color: rgba(237, 237, 237, 0.95);
+}
+#content {
+  padding: 0 1em;
 }
 .table-torrents tfoot {
   display: none;
@@ -160,4 +160,129 @@ a:active {
 .title {
   color: #fff;
   margin-bottom: 1em;
+}
+#header {
+  z-index: 10;
+  height: 30px;
+  padding: 13px 0 0;
+  text-align: center;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+}
+#header h1 {
+  color: #fff;
+  font-size: 0.9em;
+}
+#header .btn-set {
+  position: absolute;
+  left: 15px;
+}
+#header nav {
+  -webkit-app-region: no-drag;
+}
+#header nav.darwin {
+  position: absolute;
+  left: 15px;
+}
+#header nav.fs-darwin {
+  top: 0px;
+  right: 7px;
+  left: initial;
+}
+#header nav.win32,
+#header nav.linux {
+  right: 7px;
+  left: initial;
+}
+#header nav.fs-win32,
+#header nav.fs-linux {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+#header .btn-os {
+  float: left;
+  margin: 0 6px 0 0;
+  background: #000;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  border: 0;
+  color: transparent;
+  display: inline-block;
+  font-size: 10px;
+  height: 12px;
+  padding: 0;
+  text-align: center;
+  width: 12px;
+  cursor: pointer;
+}
+#header .btn-os.os-close {
+  background-image: url("../img/icons/quit.png");
+  background-position: center;
+}
+#header .btn-os.os-close:hover {
+  background-image: url("../img/icons/quitcolor.png");
+  background-position: center;
+}
+#header .btn-os.os-max {
+  background-image: url("../img/icons/max.png");
+  background-position: center;
+}
+#header .btn-os.os-max:hover {
+  background-image: url("../img/icons/maxcolor.png");
+  background-position: center;
+}
+#header .btn-os.os-min {
+  background-image: url("../img/icons/min.png");
+  background-position: center;
+}
+#header .btn-os.os-min:hover {
+  background-image: url("../img/icons/mincolor.png");
+  background-position: center;
+}
+#header .btn-os.fullscreen {
+  color: #000;
+  background: transparent;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  display: block;
+}
+#header .btn-os.fullscreen:hover {
+  color: #b2b2b2;
+}
+#header .btn-os.fullscreen::before {
+  content: "\e000";
+  font-family: VideoJS;
+  font-size: 1.85em;
+  line-height: 0.2em;
+  background: none;
+  display: block;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+#header .btn-os.fullscreen.active::before {
+  content: "\e00B";
+}
+#header .btn-set.darwin .btn-os.os-close {
+  background: #ca2c24;
+}
+#header .btn-set.darwin .btn-os.os-max {
+  background: #239c3a;
+}
+#header .btn-set.darwin .btn-os.os-min {
+  background: #e3af0a;
+}
+#header .btn-set.darwin:hover .btn-os {
+  background-position: center;
+}
+#header .btn-set.darwin:hover .btn-os.os-close {
+  background-image: url("../img/icons/quitcolor.png");
+}
+#header .btn-set.darwin:hover .btn-os.os-max {
+  background-image: url("../img/icons/maxcolor.png");
+}
+#header .btn-set.darwin:hover .btn-os.os-min {
+  background-image: url("../img/icons/mincolor.png");
 }

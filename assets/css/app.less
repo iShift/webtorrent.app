@@ -52,9 +52,6 @@ a {
     -o-transition: fill 0.2s ease-in-out;
     transition: fill 0.2s ease-in-out;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
   }
@@ -76,10 +73,10 @@ a {
   .pie-10 {fill: #E9E9EB} .pie-10-hover{fill:#ffffff}
 }
 
-#header {
+.logo-container {
   display: block;
-  text-align: center;
   margin: 1em auto;
+  text-align: center;
   
   .logo {
     position: relative;
@@ -92,6 +89,10 @@ a {
     .prefix { color: rgba(13,215,247,.7); }
     .suffix { color: rgba(237,237,237,.95); }
   }
+}
+
+#content {
+  padding: 0 1em;
 }
 
 .table-torrents {
@@ -117,5 +118,131 @@ a {
 .title {
   color: #fff;
   margin-bottom: 1em;
+}
+
+#header {
+  z-index: 10;
+  height: 30px;
+  padding: 13px 0 0;
+  text-align: center;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+
+  h1 {
+    color: #fff;
+    font-size: 0.9em;
+  }
+  .btn-set {
+    position: absolute;
+    left: 15px;
+  }
+  nav {
+    -webkit-app-region: no-drag;
+  }
+  nav.darwin {
+    position: absolute;
+    left: 15px;
+  }
+  nav.fs-darwin {
+    top: 0px;
+    right: 7px;
+    left: initial;
+  }
+  nav.win32,
+  nav.linux {
+    right: 7px;
+    left: initial;
+  }
+  nav.fs-win32,
+  nav.fs-linux {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+  }
+  .btn-os {
+    float: left;
+    margin: 0 6px 0 0;
+    background: #000;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 0;
+    color: transparent;
+    display: inline-block;
+    font-size: 10px;
+    height: 12px;
+    padding: 0;
+    text-align: center;
+    width: 12px;
+    cursor: pointer;
+  }
+  .btn-os.os-close {
+    background-image: url("../img/icons/quit.png");
+    background-position: center;
+    &:hover {
+      background-image: url("../img/icons/quitcolor.png");
+      background-position: center;
+    }
+  }
+  .btn-os.os-max {
+    background-image: url("../img/icons/max.png");
+    background-position: center;
+    &:hover {
+      background-image: url("../img/icons/maxcolor.png");
+      background-position: center;
+    }
+  }
+  .btn-os.os-min {
+    background-image: url("../img/icons/min.png");
+    background-position: center;
+    &:hover {
+      background-image: url("../img/icons/mincolor.png");
+      background-position: center;
+    }
+  }
+  .btn-os.fullscreen {
+    color: #000;
+    background: transparent;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: block;
+    &:hover {
+      color: #b2b2b2;
+    }
+  }
+  .btn-os.fullscreen::before {
+    content: "\e000";
+    font-family: VideoJS;
+    font-size: 1.85em;
+    line-height: 0.2em;
+    background: none;
+    display: block;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .btn-os.fullscreen.active::before {
+    content: "\e00B";
+  }
+  .btn-set.darwin {
+    .btn-os.os-close { background: #ca2c24; }
+    .btn-os.os-max { background: #239c3a; }
+    .btn-os.os-min { background: #e3af0a; }
+
+    &:hover {
+      .btn-os {
+        background-position: center;
+      }
+      .btn-os.os-close {
+        background-image: url("../img/icons/quitcolor.png");
+      }
+      .btn-os.os-max {
+        background-image: url("../img/icons/maxcolor.png");
+      }
+      .btn-os.os-min {
+        background-image: url("../img/icons/mincolor.png");
+      }
+    }
+  }
 }
 
