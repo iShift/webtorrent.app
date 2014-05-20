@@ -2,7 +2,6 @@
 var gui = require('nw.gui')
 var fs  = require('fs')
 
-var isDebug = (gui.App.argv.indexOf('--debug') > -1)
 var isWin   = (process.platform === 'win32')
 var isLinux = (process.platform === 'linux')
 var isOSX   = (process.platform === 'darwin')

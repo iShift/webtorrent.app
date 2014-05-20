@@ -169,7 +169,7 @@ gulp.task('ffmpeg', [ 'grunt-nodewebkit' ], shell.task([
   'cp -f ' + 'lib/linux64/libffmpegsumo.so' + ' "' + paths.build.linux64 + '"'
 ]))
 
-// temporary nodewebkit hack for nodewebkit
+// temporary workaround hack for nodewebkit
 // http://stackoverflow.com/questions/22787613/running-nodewebkit-app-fails-with-invalid-package-json-field-main-is-required
 // https://github.com/shama/nodewebkit/issues/28
 gulp.task('nodewebkit-workaround', shell.task([
