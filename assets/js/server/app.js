@@ -98,6 +98,7 @@ client.on('addTorrent', function (torrent) {
         eta: estimate,
         etaRaw: estimatedSecondsRemaining,
         peerQueueSize: swarm.numQueued,
+        hotswaps: hotswaps,
         wires: wires.map(function (wire) {
           return {
             addr: wire.remoteAddress,

@@ -14,6 +14,9 @@ function Client () {
   // start the express server running webtorrent in a child process and attempt to connect to it
   var script = process.cwd() + '/assets/js/server/app.js'
   var child  = cp.exec('node ' + script, function (error, stdout, stderr) {
+    console.log('webtorrent process exited', error)
+    console.log(stdout)
+    console.log(stderr)
     // TODO: proper logging
   })
 
@@ -47,6 +50,8 @@ function Client () {
     socket.on('connect_error', onConnectError)
     socket.on('connect_timeout', function () { onConnectError(new Error('timeout')) })
   }
+
+  // give webtorrent process a moment to initialize before trying to connect to it
   setTimeout(tryConnect, 1000)
 
   self.socketP.then(function (socket) {
@@ -64,6 +69,8 @@ function Client () {
 
 Client.prototype.add = function (torrentId, opts) {
   var self = this
+  console.log('addTorrent', torrentId)
+
   self.socketP.then(function (socket) {
     socket.emit('addTorrent', { torrentId: torrentId, opts: opts })
   })

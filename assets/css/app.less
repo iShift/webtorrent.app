@@ -258,8 +258,7 @@ a {
   left: 0;
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  border: 1px solid red;
-  color: #fff;
+  pointer-events: none;
   
   .glyphicon {
     position: absolute;
@@ -267,6 +266,7 @@ a {
     left: 50%;
     font-size: 96px;
     margin: -48px 0 0 -48px;
+    color: #fff;
   }
 
   .transition(opacity, 250ms, ease-out);
