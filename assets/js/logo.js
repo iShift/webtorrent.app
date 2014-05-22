@@ -267,5 +267,4 @@
   }
 
   global.spinningLogo = spinningLogo
-  spinningLogo({}).paintTo(".spinning-logo")
 })(window)

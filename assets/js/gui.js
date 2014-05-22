@@ -2,16 +2,6 @@
 var gui = require('nw.gui')
 var fs  = require('fs')
 
-var isWin   = (process.platform === 'win32')
-var isLinux = (process.platform === 'linux')
-var isOSX   = (process.platform === 'darwin')
-
-var BUTTON_ORDER = [ 'close', 'min', 'max' ]
-
-if (isWin)   { BUTTON_ORDER = [ 'min', 'max', 'close' ] }
-if (isLinux) { BUTTON_ORDER = [ 'min', 'max', 'close' ] }
-if (isOSX)   { BUTTON_ORDER = [ 'close', 'min', 'max' ] }
-
 var win = gui.Window.get()
 win.title = 'WebTorrent'
 win.focus()
@@ -28,7 +18,15 @@ Mousetrap.bind([ 'ctrl+r', 'f11' ], function () {
 $(document).ready(function () {
   // render chrome buttons
   $.get('/assets/html/header.html').then(function (header) {
-    $("#header").html(_.template(header, { buttons: BUTTON_ORDER }))
+    var buttons = {
+      win32: [ 'min', 'max', 'close' ],
+      linux: [ 'min', 'max', 'close' ],
+      darwin: [ 'close', 'min', 'max' ]
+    }[process.platform]
+
+    $("#header").html(_.template(header, { buttons: buttons }))
+    spinningLogo({}).paintTo(".spinning-logo")
+
     // Maximize, minimize
     $('.btn-os.os-max').on('click', function () {
       if (win.isFullscreen) {
@@ -57,9 +55,7 @@ $(document).ready(function () {
   })
 
   // enable tooltips
-  $('body').tooltip({
-    selector: "*[data-toggle^='tooltip']"
-  })
+  //$('body').tooltip({ selector: "*[data-toggle^='tooltip']" })
 
   /**
    * Drag & Drop torrent onto window
@@ -98,7 +94,7 @@ $(document).ready(function () {
   holder.onpaste = function (e) {
     var data = e.clipboardData.getData('text/plain')
 
-    if (data.substring(0,8) == "magnet:?") {
+    if (data.substring(0,8) === "magnet:?") {
       console.log(data)
       // TODO: add torrent
     }

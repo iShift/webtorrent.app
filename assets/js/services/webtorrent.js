@@ -14,9 +14,7 @@ function Client () {
   // start the express server running webtorrent in a child process and attempt to connect to it
   var script = process.cwd() + '/assets/js/server/app.js'
   var child  = cp.exec('node ' + script, function (error, stdout, stderr) {
-    console.log('child process died; error', error)
-    console.log('child process died; stdout', stdout)
-    console.log('child process died; stderr', stderr)
+    // TODO: proper logging
   })
 
   process.on('SIGINT',  function () { child.kill('SIGINT')  })

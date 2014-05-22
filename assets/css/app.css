@@ -20,9 +20,8 @@ a:active {
 }
 .spinning-logo {
   display: inline-block;
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
+  width: 74px;
+  height: 74px;
 }
 .spinning-logo .axis path,
 .spinning-logo .axis line {
@@ -112,13 +111,12 @@ a:active {
   fill: #ffffff;
 }
 .logo-container {
-  display: block;
-  margin: 1em auto;
+  margin: 0 auto;
   text-align: center;
 }
 .logo-container .logo {
   position: relative;
-  top: -24px;
+  top: -16px;
   margin-left: .2em;
   display: inline-block;
   font-family: 'Carrois Gothic SC', sans-serif;
@@ -162,9 +160,6 @@ a:active {
   margin-bottom: 1em;
 }
 #header {
-  z-index: 10;
-  height: 30px;
-  padding: 13px 0 0;
   text-align: center;
   -webkit-app-region: drag;
   -webkit-user-select: none;
@@ -178,6 +173,7 @@ a:active {
   left: 15px;
 }
 #header nav {
+  padding: 13px 0 0;
   -webkit-app-region: no-drag;
 }
 #header nav.darwin {
