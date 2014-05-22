@@ -51,7 +51,7 @@ function Client () {
     socket.on('connect_timeout', function () { onConnectError(new Error('timeout')) })
   }
 
-  // give webtorrent process a moment to initialize before trying to connect to it
+  // give the webtorrent process a moment to initialize before trying to connect to it
   setTimeout(tryConnect, 1000)
 
   self.socketP.then(function (socket) {
