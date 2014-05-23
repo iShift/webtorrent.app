@@ -48,7 +48,7 @@
     "q": "^1.0.1",
     "express.io": "^1.1.13",
     "nedb": "^0.10.5",
-    "nodewebkit": "^0.9.2-4"
+    "nodewebkit": "0.9.2-5"
   },
   "devDependencies": {
     "gulp": "^3.6.2",
