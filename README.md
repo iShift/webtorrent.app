@@ -19,18 +19,25 @@ The app bootstraps by loading index.html, and it's reasonably easy to follow the
 
 Install [bower](http://bower.io/) (web package manager) and [gulp](http://gulpjs.com/) (build system). Note that you do not need to install grunt; the Gruntfile exists strictly as an internal workaround for building the node-webkit app.
 
+Clone from github
+```
+git clone https://github.com/feross/webtorrent.app.git
+cd webtorrent.app
+```
+Install global dependencies
+
 ```
 npm install -g bower gulp nodewebkit
 ```
 
-Initialize dependencies.
+Initialize dependencies
 
 ```
 npm install
 bower install
 ```
 
-Compile local distribution.
+Compile local distribution
 
 ```
 gulp
